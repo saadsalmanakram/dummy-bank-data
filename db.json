@@ -1,163 +1,142 @@
 [
   {
     "user_id": "user_01",
-    "contact_email": "user01@example.com",
-    "accounts": [
-      {
-        "account_id": "CHK-001-1234",
-        "account_type": "checking",
-        "balance": 1275.9
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-987654",
-        "account_id": "CHK-001-1234",
-        "date": "2025-09-09",
-        "amount": -6.45,
-        "description": "Starbucks"
-      }
-    ],
-    "loans": [
-      {
-        "loan_id": "LOAN-555666",
-        "loan_type": "personal",
-        "status": "under_review",
-        "amount": 10000.0
-      }
-    ]
+    "account_id": "CHK-001-4321",
+    "balance": 1275.90,
+    "most_recent_transaction_amount": -6.45,
+    "email": "user01@example.com"
   },
   {
     "user_id": "user_02",
-    "contact_email": "user02@example.com",
-    "accounts": [
-      {
-        "account_id": "CHK-001-5678",
-        "account_type": "checking",
-        "balance": 500.25
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-112233",
-        "account_id": "CHK-001-5678",
-        "date": "2025-09-15",
-        "amount": -50.0,
-        "description": "Grocery Store"
-      }
-    ],
-    "loans": []
+    "account_id": "CHK-001-5678",
+    "balance": 500.25,
+    "most_recent_transaction_amount": -50.00,
+    "email": "user02@example.com"
   },
   {
     "user_id": "user_03",
-    "contact_email": "user03@example.com",
-    "accounts": [
-      {
-        "account_id": "SAV-002-2468",
-        "account_type": "savings",
-        "balance": 15000.0
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-445566",
-        "account_id": "SAV-002-2468",
-        "date": "2025-09-10",
-        "amount": 500.0,
-        "description": "Payroll Deposit"
-      }
-    ],
-    "loans": []
+    "account_id": "SAV-002-2468",
+    "balance": 15000.00,
+    "most_recent_transaction_amount": 500.00,
+    "email": "user03@example.com"
   },
   {
     "user_id": "user_04",
-    "contact_email": "user04@example.com",
-    "accounts": [
-      {
-        "account_id": "CC-003-8899",
-        "account_type": "credit_card",
-        "balance": -345.5
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-778899",
-        "account_id": "CC-003-8899",
-        "date": "2025-09-16",
-        "amount": -345.5,
-        "description": "Online Shopping"
-      }
-    ],
-    "loans": []
+    "account_id": "CC-003-8899",
+    "balance": -345.50,
+    "most_recent_transaction_amount": -345.50,
+    "email": "user04@example.com"
   },
   {
     "user_id": "user_05",
-    "contact_email": "user05@example.com",
-    "accounts": [
-      {
-        "account_id": "CHK-001-9012",
-        "account_type": "checking",
-        "balance": 2500.0
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-123456",
-        "account_id": "CHK-001-9012",
-        "date": "2025-09-17",
-        "amount": 2500.0,
-        "description": "Payroll Deposit"
-      }
-    ],
-    "loans": [
-      {
-        "loan_id": "LOAN-112233",
-        "loan_type": "mortgage",
-        "status": "active",
-        "amount": 132450.76
-      }
-    ]
+    "account_id": "CHK-001-9012",
+    "balance": 2500.00,
+    "most_recent_transaction_amount": 2500.00,
+    "email": "user05@example.com"
   },
   {
     "user_id": "user_06",
-    "contact_email": "user06@example.com",
-    "accounts": [
-      {
-        "account_id": "SAV-002-3344",
-        "account_type": "savings",
-        "balance": 750.5
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-778899",
-        "account_id": "SAV-002-3344",
-        "date": "2025-09-18",
-        "amount": 25.0,
-        "description": "Interest Payment"
-      }
-    ],
-    "loans": []
+    "account_id": "SAV-002-3344",
+    "balance": 750.50,
+    "most_recent_transaction_amount": 25.00,
+    "email": "user06@example.com"
   },
   {
     "user_id": "user_07",
-    "contact_email": "user07@example.com",
-    "accounts": [
-      {
-        "account_id": "CHK-001-2233",
-        "account_type": "checking",
-        "balance": 100.0
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-001122",
-        "account_id": "CHK-001-2233",
-        "date": "2025-09-19",
-        "amount": -99.0,
-        "description": "TechShop"
-      }
-    ],
-    "loans": []
+    "account_id": "CHK-001-2233",
+    "balance": 100.00,
+    "most_recent_transaction_amount": -99.00,
+    "email": "user07@example.com"
+  },
+  {
+    "user_id": "user_08",
+    "account_id": "SAV-002-1111",
+    "balance": 3000.00,
+    "most_recent_transaction_amount": -50.00,
+    "email": "user08@example.com"
+  },
+  {
+    "user_id": "user_09",
+    "account_id": "CHK-001-9988",
+    "balance": 75.00,
+    "most_recent_transaction_amount": -25.00,
+    "email": "user09@example.com"
+  },
+  {
+    "user_id": "user_10",
+    "account_id": "SAV-002-7788",
+    "balance": 2000.00,
+    "most_recent_transaction_amount": 200.00,
+    "email": "user10@example.com"
+  },
+  {
+    "user_id": "user_11",
+    "account_id": "CHK-001-4444",
+    "balance": 350.50,
+    "most_recent_transaction_amount": -85.00,
+    "email": "user11@example.com"
+  },
+  {
+    "user_id": "user_12",
+    "account_id": "CC-003-5566",
+    "balance": -50.00,
+    "most_recent_transaction_amount": -50.00,
+    "email": "user12@example.com"
+  },
+  {
+    "user_id": "user_13",
+    "account_id": "CHK-001-8877",
+    "balance": 1200.00,
+    "most_recent_transaction_amount": -1200.00,
+    "email": "user13@example.com"
+  },
+  {
+    "user_id": "user_14",
+    "account_id": "SAV-002-9988",
+    "balance": 9500.00,
+    "most_recent_transaction_amount": 25.00,
+    "email": "user14@example.com"
+  },
+  {
+    "user_id": "user_15",
+    "account_id": "CHK-001-3322",
+    "balance": 450.00,
+    "most_recent_transaction_amount": -45.00,
+    "email": "user15@example.com"
+  },
+  {
+    "user_id": "user_16",
+    "account_id": "SAV-002-1212",
+    "balance": 6000.00,
+    "most_recent_transaction_amount": 500.00,
+    "email": "user16@example.com"
+  },
+  {
+    "user_id": "user_17",
+    "account_id": "CHK-001-5678",
+    "balance": 1800.00,
+    "most_recent_transaction_amount": -15.99,
+    "email": "user17@example.com"
+  },
+  {
+    "user_id": "user_18",
+    "account_id": "CC-003-8877",
+    "balance": -500.00,
+    "most_recent_transaction_amount": -500.00,
+    "email": "user18@example.com"
+  },
+  {
+    "user_id": "user_19",
+    "account_id": "CHK-001-6655",
+    "balance": 750.00,
+    "most_recent_transaction_amount": -50.00,
+    "email": "user19@example.com"
+  },
+  {
+    "user_id": "user_20",
+    "account_id": "SAV-002-3311",
+    "balance": 11000.00,
+    "most_recent_transaction_amount": 1000.00,
+    "email": "user20@example.com"
   }
 ]
