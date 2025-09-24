@@ -2,518 +2,241 @@
   "scenarios": [
     {
       "category": "Account Management",
-      "task": "Check Account Balance",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "What's my savings account balance?"
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Let me check… Your savings account ending in 4321 has a balance of $4,820.35 as of today. Would you like me to also show your checking balance?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes, please."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Your checking account balance is $1,275.90."
-        }
+      "intent": "CheckAccountBalance",
+      "description": "User inquires about account balances.",
+      "flow": [
+        { "speaker": "User", "text": "What’s my savings account balance?" },
+        { "speaker": "AI", "text": "Let me check… Your savings account ending in 4321 has a balance of $4,820.35 as of today. Would you like me to also show your checking balance?", "action": "QueryBalance", "slots": ["account_type:savings"] },
+        { "speaker": "User", "text": "Yes, please." },
+        { "speaker": "AI", "text": "Your checking account balance is $1,275.90.", "action": "QueryBalance", "slots": ["account_type:checking"] }
       ]
     },
     {
       "category": "Account Management",
-      "task": "View Recent Transactions",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Can you show me my last 5 transactions?"
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Here are your most recent 5 transactions from checking:\n\nStarbucks – $6.45 (Sep 9)\nUber – $15.20 (Sep 8)\nAmazon – $42.99 (Sep 7)\nPayroll Deposit – $2,500.00 (Sep 7)\nNetflix – $15.99 (Sep 6)\n\nWould you like me to download a statement for this month?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes, send it by email."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Done. I’ve sent your September statement to your registered email."
-        }
+      "intent": "ViewRecentTransactions",
+      "description": "User requests a list of recent transactions.",
+      "flow": [
+        { "speaker": "User", "text": "Can you show me my last 5 transactions?" },
+        { "speaker": "AI", "text": "Here are your most recent 5 transactions from checking: [List of transactions]. Would you like me to download a statement for this month?", "action": "RetrieveTransactions", "slots": ["count:5", "account_type:checking"] },
+        { "speaker": "User", "text": "Yes, send it by email." },
+        { "speaker": "AI", "text": "Done. I’ve sent your September statement to your registered email.", "action": "SendStatement", "slots": ["delivery_method:email", "timeframe:september"] }
       ]
     },
     {
       "category": "Account Management",
-      "task": "Update Contact Information",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "I need to update my phone number."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Of course. What’s your new phone number?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "555-987-6543"
-        },
-        {
-          "speaker": "AI",
-          "utterance": "I’ve updated your phone number to 555-987-6543. You’ll receive a confirmation code shortly. Please provide that code here."
-        },
-        {
-          "speaker": "User",
-          "utterance": "8421"
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Perfect! Your contact information has been successfully updated."
-        }
+      "intent": "UpdateContactInformation",
+      "description": "User changes their phone number with a confirmation step.",
+      "flow": [
+        { "speaker": "User", "text": "I need to update my phone number." },
+        { "speaker": "AI", "text": "Of course. What’s your new phone number?", "action": "PromptForSlot", "slots": ["slot_to_fill:new_phone"] },
+        { "speaker": "User", "text": "555-987-6543" },
+        { "speaker": "AI", "text": "I’ve updated your phone number to 555-987-6543. You’ll receive a confirmation code shortly. Please provide that code here.", "action": "SendVerificationCode", "slots": ["new_phone:555-987-6543"] },
+        { "speaker": "User", "text": "8421" },
+        { "speaker": "AI", "text": "Perfect! Your contact information has been successfully updated.", "action": "VerifyAndConfirmUpdate", "slots": ["verification_code:8421"] }
       ]
     },
     {
       "category": "Account Management",
-      "task": "Order Account Statements",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "I need my March statement."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Do you want it for your checking account, savings, or both?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Checking account."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "I’ve generated your March checking account statement and emailed it to you. Would you also like a downloadable PDF here?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Here’s your PDF download link. ✅"
-        }
+      "intent": "OrderAccountStatements",
+      "description": "User requests a specific month's statement.",
+      "flow": [
+        { "speaker": "User", "text": "I need my March statement." },
+        { "speaker": "AI", "text": "Do you want it for your checking account, savings, or both?", "action": "PromptForSlot", "slots": ["slot_to_fill:account_type", "timeframe:march"] },
+        { "speaker": "User", "text": "Checking account." },
+        { "speaker": "AI", "text": "I’ve generated your March checking account statement and emailed it to you. Would you also like a downloadable PDF here?", "action": "GenerateAndEmailStatement", "slots": ["account_type:checking"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Here’s your PDF download link. ✅", "action": "ProvideDownloadLink" }
       ]
     },
     {
       "category": "Payments & Transfers",
-      "task": "Transfer Funds (Internal/External)",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Transfer $200 from my checking to savings."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Got it. Transferring $200 from checking ending 1234 to savings ending 4321. Do you want this transfer processed immediately?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Done ✅. $200 has been transferred. Your new balances are: Checking – $1,075.90, Savings – $5,020.35."
-        }
+      "intent": "TransferFunds",
+      "description": "User initiates an immediate internal funds transfer.",
+      "flow": [
+        { "speaker": "User", "text": "Transfer $200 from my checking to savings." },
+        { "speaker": "AI", "text": "Got it. Transferring $200 from checking ending 1234 to savings ending 4321. Do you want this transfer processed immediately?", "action": "ConfirmTransferDetails", "slots": ["amount:200", "source:checking", "destination:savings"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Done ✅. $200 has been transferred. Your new balances are: Checking – $1,075.90, Savings – $5,020.35.", "action": "ExecuteTransfer", "slots": ["timing:immediate"] }
       ]
     },
     {
       "category": "Payments & Transfers",
-      "task": "Schedule Recurring Payments",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Schedule my rent payment."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Sure. How much is the rent, and who’s the payee?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "$1,200 to Greenview Apartments."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Got it. Do you want this to repeat monthly?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes, on the 1st of every month."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Perfect. I’ve scheduled $1,200 monthly payments to Greenview Apartments starting Oct 1. Would you like reminders before each payment?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Okay, I’ll notify you 2 days before each rent payment."
-        }
+      "intent": "ScheduleRecurringPayment",
+      "description": "User sets up a new recurring bill payment.",
+      "flow": [
+        { "speaker": "User", "text": "Schedule my rent payment." },
+        { "speaker": "AI", "text": "Sure. How much is the rent, and who’s the payee?", "action": "PromptForSlot", "slots": ["slot_to_fill:amount,payee"] },
+        { "speaker": "User", "text": "$1,200 to Greenview Apartments." },
+        { "speaker": "AI", "text": "Got it. Do you want this to repeat monthly?", "action": "PromptForSlot", "slots": ["amount:1200", "payee:Greenview Apartments"] },
+        { "speaker": "User", "text": "Yes, on the 1st of every month." },
+        { "speaker": "AI", "text": "Perfect. I’ve scheduled $1,200 monthly payments to Greenview Apartments starting Oct 1. Would you like reminders before each payment?", "action": "ConfirmSchedule", "slots": ["frequency:monthly", "day_of_month:1", "start_date:Oct 1"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Okay, I’ll notify you 2 days before each rent payment.", "action": "SetReminder", "slots": ["reminder_days:2"] }
       ]
     },
     {
       "category": "Payments & Transfers",
-      "task": "Pay Bills",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Pay my electricity bill."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "I see your latest bill from CityPower is $85.00, due on Sept 12. Do you want me to pay it now?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Your electricity bill of $85 has been paid. Confirmation number: CP-993842. ✅"
-        }
+      "intent": "PayBill",
+      "description": "User pays an existing, known bill.",
+      "flow": [
+        { "speaker": "User", "text": "Pay my electricity bill." },
+        { "speaker": "AI", "text": "I see your latest bill from CityPower is $85.00, due on Sept 12. Do you want me to pay it now?", "action": "RetrieveAndConfirmBill", "slots": ["biller:CityPower", "amount:85.00"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Your electricity bill of $85 has been paid. Confirmation number: CP-993842. ✅", "action": "ExecutePayment" }
       ]
     },
     {
       "category": "Payments & Transfers",
-      "task": "Cancel Scheduled Transfer",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Cancel the transfer to John tomorrow."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "You have a $150 transfer to John Smith scheduled for Sept 11. Do you want to cancel it?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "It’s canceled. No money will be transferred tomorrow. Would you like me to notify John?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "No, that’s fine."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Got it. Transfer canceled successfully."
-        }
+      "intent": "CancelScheduledTransfer",
+      "description": "User cancels a future transfer.",
+      "flow": [
+        { "speaker": "User", "text": "Cancel the transfer to John tomorrow." },
+        { "speaker": "AI", "text": "You have a $150 transfer to John Smith scheduled for Sept 11. Do you want to cancel it?", "action": "VerifyScheduledTransfer", "slots": ["recipient:John", "date:tomorrow"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "It’s canceled. No money will be transferred tomorrow. Would you like me to notify John?", "action": "ExecuteCancellation" },
+        { "speaker": "User", "text": "No, that’s fine." },
+        { "speaker": "AI", "text": "Got it. Transfer canceled successfully.", "action": "ConfirmCancellation" }
       ]
     },
     {
       "category": "Card Services",
-      "task": "Activate Card",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Activate my new debit card."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Please provide the last 4 digits of the card."
-        },
-        {
-          "speaker": "User",
-          "utterance": "4321."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Your card ending in 4321 is now activated and ready to use. Would you like me to set up card alerts for spending and online transactions?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes, please."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Alerts are now enabled for your debit card."
-        }
+      "intent": "ActivateCard",
+      "description": "User activates a new debit card.",
+      "flow": [
+        { "speaker": "User", "text": "Activate my new debit card." },
+        { "speaker": "AI", "text": "Please provide the last 4 digits of the card.", "action": "PromptForSlot", "slots": ["slot_to_fill:last_4_digits"] },
+        { "speaker": "User", "text": "4321." },
+        { "speaker": "AI", "text": "Your card ending in 4321 is now activated and ready to use. Would you like me to set up card alerts for spending and online transactions?", "action": "ActivateCard", "slots": ["last_4_digits:4321"] },
+        { "speaker": "User", "text": "Yes, please." },
+        { "speaker": "AI", "text": "Alerts are now enabled for your debit card.", "action": "SetCardAlerts" }
       ]
     },
     {
       "category": "Card Services",
-      "task": "Report Lost or Stolen Card",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "I lost my credit card."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "I’m sorry to hear that. I’ll block your card immediately to prevent misuse. The card ending in 5678 has been blocked. Do you want me to issue a replacement?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "A replacement card will be mailed to your address within 5–7 business days."
-        }
+      "intent": "ReportLostOrStolenCard",
+      "description": "User reports a lost credit card and requests a replacement.",
+      "flow": [
+        { "speaker": "User", "text": "I lost my credit card." },
+        { "speaker": "AI", "text": "I’m sorry to hear that. I’ll block your card immediately to prevent misuse. The card ending in 5678 has been blocked. Do you want me to issue a replacement?", "action": "BlockCard", "slots": ["reason:lost", "card_type:credit"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "A replacement card will be mailed to your address within 5–7 business days.", "action": "IssueReplacementCard" }
       ]
     },
     {
       "category": "Card Services",
-      "task": "Lock/Unlock Card",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Lock my debit card."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Your debit card ending 4321 is now locked. You won’t be able to use it for any transactions. Would you like me to unlock it later automatically?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes, unlock it tomorrow morning."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Okay, your card will unlock at 8:00 AM tomorrow."
-        }
+      "intent": "LockUnlockCard",
+      "description": "User locks their debit card and schedules an automatic unlock.",
+      "flow": [
+        { "speaker": "User", "text": "Lock my debit card." },
+        { "speaker": "AI", "text": "Your debit card ending 4321 is now locked. You won’t be able to use it for any transactions. Would you like me to unlock it later automatically?", "action": "LockCard", "slots": ["action:lock", "card_type:debit"] },
+        { "speaker": "User", "text": "Yes, unlock it tomorrow morning." },
+        { "speaker": "AI", "text": "Okay, your card will unlock at 8:00 AM tomorrow.", "action": "ScheduleUnlock", "slots": ["unlock_time:tomorrow morning"] }
       ]
     },
     {
       "category": "Card Services",
-      "task": "Request Replacement Card",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Request a replacement for my damaged card."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Got it. Would you like the new card sent to your registered home address?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Your replacement card will arrive in 5–7 business days. Your existing card will remain active until you activate the new one."
-        }
+      "intent": "RequestReplacementCard",
+      "description": "User requests a replacement for a damaged card.",
+      "flow": [
+        { "speaker": "User", "text": "Request a replacement for my damaged card." },
+        { "speaker": "AI", "text": "Got it. Would you like the new card sent to your registered home address?", "action": "VerifyAddress", "slots": ["reason:damaged"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Your replacement card will arrive in 5–7 business days. Your existing card will remain active until you activate the new one.", "action": "ProcessReplacement" }
       ]
     },
     {
       "category": "Loan & Mortgage",
-      "task": "Apply for Loan/Mortgage",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "I want to apply for a personal loan."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Sure, let’s start. How much would you like to borrow?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "$10,000."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "And what repayment term are you interested in? 12, 24, or 36 months?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "24 months."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Based on your credit profile, you may qualify for a personal loan of $10,000 at 7.5% APR over 24 months. Estimated monthly payment: $450. Would you like me to submit the application?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Your application has been submitted. You’ll receive a decision within 1–2 business days."
-        }
+      "intent": "ApplyForLoan",
+      "description": "User initiates a personal loan application.",
+      "flow": [
+        { "speaker": "User", "text": "I want to apply for a personal loan." },
+        { "speaker": "AI", "text": "Sure, let’s start. How much would you like to borrow?", "action": "PromptForSlot", "slots": ["loan_type:personal"] },
+        { "speaker": "User", "text": "$10,000." },
+        { "speaker": "AI", "text": "And what repayment term are you interested in? 12, 24, or 36 months?", "action": "PromptForSlot", "slots": ["amount:10000"] },
+        { "speaker": "User", "text": "24 months." },
+        { "speaker": "AI", "text": "Based on your credit profile, you may qualify for a personal loan of $10,000 at 7.5% APR over 24 months. Estimated monthly payment: $450. Would you like me to submit the application?", "action": "ProvideLoanOffer", "slots": ["term:24 months"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Your application has been submitted. You’ll receive a decision within 1–2 business days.", "action": "SubmitApplication" }
       ]
     },
     {
       "category": "Loan & Mortgage",
-      "task": "Check Loan Status",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "What’s the status of my car loan application?"
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Checking… Your car loan application for $15,000 is currently under review. Expected decision: within 24 hours. Would you like me to notify you as soon as it’s approved?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Great, I’ll send you an instant update once it’s approved."
-        }
+      "intent": "CheckLoanStatus",
+      "description": "User checks the status of a pending loan application.",
+      "flow": [
+        { "speaker": "User", "text": "What’s the status of my car loan application?" },
+        { "speaker": "AI", "text": "Checking… Your car loan application for $15,000 is currently under review. Expected decision: within 24 hours. Would you like me to notify you as soon as it’s approved?", "action": "RetrieveStatus", "slots": ["loan_type:car"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Great, I’ll send you an instant update once it’s approved.", "action": "SetNotification" }
       ]
     },
     {
       "category": "Loan & Mortgage",
-      "task": "Request Payoff Amount",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "How much do I need to pay off my mortgage?"
-        },
-        {
-          "speaker": "AI",
-          "utterance": "As of today, your total payoff amount is $132,450.76, which includes principal and interest. Would you like me to generate a payoff letter?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes, please."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "I’ve generated your official payoff letter and emailed it to you."
-        }
+      "intent": "RequestPayoffAmount",
+      "description": "User requests the total payoff amount for a loan.",
+      "flow": [
+        { "speaker": "User", "text": "How much do I need to pay off my mortgage?" },
+        { "speaker": "AI", "text": "As of today, your total payoff amount is $132,450.76, which includes principal and interest. Would you like me to generate a payoff letter?", "action": "ProvidePayoffAmount", "slots": ["loan_type:mortgage"] },
+        { "speaker": "User", "text": "Yes, please." },
+        { "speaker": "AI", "text": "I’ve generated your official payoff letter and emailed it to you.", "action": "GenerateAndEmailLetter" }
       ]
     },
     {
       "category": "Loan & Mortgage",
-      "task": "Modify Payment Schedule",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Can I change my loan payment date?"
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Yes. Your current due date is the 1st of each month. What new date would you prefer?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "The 15th."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Okay, your loan payment date has been changed to the 15th of each month starting next cycle. Would you like reminders before payments are due?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Done. I’ll remind you 3 days before each payment."
-        }
+      "intent": "ModifyPaymentSchedule",
+      "description": "User requests to change their loan's due date.",
+      "flow": [
+        { "speaker": "User", "text": "Can I change my loan payment date?" },
+        { "speaker": "AI", "text": "Yes. Your current due date is the 1st of each month. What new date would you prefer?", "action": "PromptForSlot", "slots": ["slot_to_fill:new_due_date"] },
+        { "speaker": "User", "text": "The 15th." },
+        { "speaker": "AI", "text": "Okay, your loan payment date has been changed to the 15th of each month starting next cycle. Would you like reminders before payments are due?", "action": "ExecuteDateChange", "slots": ["new_due_date:15th"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Done. I’ll remind you 3 days before each payment.", "action": "SetReminder", "slots": ["reminder_days:3"] }
       ]
     },
     {
       "category": "Fraud & Disputes",
-      "task": "Report Fraudulent Activity",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "I see a charge I didn’t make."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Can you provide the amount and merchant name?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "$250 from ‘TechMart’ yesterday."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Thank you. I’ve flagged this charge and opened a fraud case. I’ve also temporarily locked your card. Do you want me to issue a new card now?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "A replacement card will be sent in 3–5 days. You’ll receive updates on your fraud case by SMS and email."
-        }
+      "intent": "ReportFraudulentActivity",
+      "description": "User reports an unauthorized charge, leading to a card lock and replacement.",
+      "flow": [
+        { "speaker": "User", "text": "I see a charge I didn’t make." },
+        { "speaker": "AI", "text": "Can you provide the amount and merchant name?", "action": "PromptForSlot", "slots": ["slot_to_fill:amount,merchant"] },
+        { "speaker": "User", "text": "$250 from ‘TechMart’ yesterday." },
+        { "speaker": "AI", "text": "Thank you. I’ve flagged this charge and opened a fraud case. I’ve also temporarily locked your card. Do you want me to issue a new card now?", "action": "OpenFraudCaseAndLockCard", "slots": ["amount:250", "merchant:TechMart"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "A replacement card will be sent in 3–5 days. You’ll receive updates on your fraud case by SMS and email.", "action": "IssueReplacementCard" }
       ]
     },
     {
       "category": "Fraud & Disputes",
-      "task": "Dispute a Transaction",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Dispute a $99 charge from TechShop."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Understood. I’ve filed a dispute for the $99 charge on Sept 7. You’ll receive a provisional credit in 24 hours while we investigate. Expect a resolution in 7–10 business days."
-        }
+      "intent": "DisputeTransaction",
+      "description": "User initiates a dispute for a transaction.",
+      "flow": [
+        { "speaker": "User", "text": "Dispute a $99 charge from TechShop." },
+        { "speaker": "AI", "text": "Understood. I’ve filed a dispute for the $99 charge on Sept 7. You’ll receive a provisional credit in 24 hours while we investigate. Expect a resolution in 7–10 business days.", "action": "FileDispute", "slots": ["amount:99", "merchant:TechShop"] }
       ]
     },
     {
       "category": "Fraud & Disputes",
-      "task": "Verify Suspicious Transaction",
-      "conversation": [
-        {
-          "speaker": "AI",
-          "utterance": "I noticed a $500 charge at the Apple Store in New York. Did you make this purchase?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "No, that wasn’t me."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Thanks for confirming. I’ve blocked the transaction and frozen your card to prevent further misuse. Would you like me to issue a replacement card right now?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Replacement card ordered. You’ll get it within 5 days."
-        }
+      "intent": "VerifySuspiciousTransaction",
+      "description": "AI proactively identifies and verifies a suspicious transaction with the user.",
+      "flow": [
+        { "speaker": "AI", "text": "I noticed a $500 charge at the Apple Store in New York. Did you make this purchase?", "action": "FlagSuspiciousTransaction", "slots": ["amount:500", "merchant:Apple Store", "location:New York"] },
+        { "speaker": "User", "text": "No, that wasn’t me." },
+        { "speaker": "AI", "text": "Thanks for confirming. I’ve blocked the transaction and frozen your card to prevent further misuse. Would you like me to issue a replacement card right now?", "action": "BlockAndFreezeCard" },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Replacement card ordered. You’ll get it within 5 days.", "action": "IssueReplacementCard" }
       ]
     },
     {
       "category": "Fraud & Disputes",
-      "task": "Freeze Account",
-      "conversation": [
-        {
-          "speaker": "User",
-          "utterance": "Freeze my checking account immediately."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Done. Your checking account is frozen, and no new transactions will be allowed. Would you like to receive alerts if anyone attempts to access it?"
-        },
-        {
-          "speaker": "User",
-          "utterance": "Yes."
-        },
-        {
-          "speaker": "AI",
-          "utterance": "Okay, I’ll notify you instantly if there’s any attempt."
-        }
+      "intent": "FreezeAccount",
+      "description": "User immediately freezes an account.",
+      "flow": [
+        { "speaker": "User", "text": "Freeze my checking account immediately." },
+        { "speaker": "AI", "text": "Done. Your checking account is frozen, and no new transactions will be allowed. Would you like to receive alerts if anyone attempts to access it?", "action": "ExecuteAccountFreeze", "slots": ["account_type:checking"] },
+        { "speaker": "User", "text": "Yes." },
+        { "speaker": "AI", "text": "Okay, I’ll notify you instantly if there’s any attempt.", "action": "SetAlerts" }
       ]
     }
   ]
