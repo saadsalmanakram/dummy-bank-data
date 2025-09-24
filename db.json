@@ -1,6 +1,7 @@
 [
   {
     "user_id": "user_01",
+    "contact_email": "user01@example.com",
     "accounts": [
       {
         "account_id": "CHK-001-1234",
@@ -28,6 +29,7 @@
   },
   {
     "user_id": "user_02",
+    "contact_email": "user02@example.com",
     "accounts": [
       {
         "account_id": "CHK-001-5678",
@@ -48,6 +50,7 @@
   },
   {
     "user_id": "user_03",
+    "contact_email": "user03@example.com",
     "accounts": [
       {
         "account_id": "SAV-002-2468",
@@ -68,6 +71,7 @@
   },
   {
     "user_id": "user_04",
+    "contact_email": "user04@example.com",
     "accounts": [
       {
         "account_id": "CC-003-8899",
@@ -88,6 +92,7 @@
   },
   {
     "user_id": "user_05",
+    "contact_email": "user05@example.com",
     "accounts": [
       {
         "account_id": "CHK-001-9012",
@@ -115,6 +120,7 @@
   },
   {
     "user_id": "user_06",
+    "contact_email": "user06@example.com",
     "accounts": [
       {
         "account_id": "SAV-002-3344",
@@ -135,6 +141,7 @@
   },
   {
     "user_id": "user_07",
+    "contact_email": "user07@example.com",
     "accounts": [
       {
         "account_id": "CHK-001-2233",
