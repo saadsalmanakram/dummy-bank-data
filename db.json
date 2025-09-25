@@ -4,7 +4,7 @@
       "case": "Check Account Balance",
       "flow": [
         {"user": "What’s my account balance?"},
-        {"bot": "Savings (4321): $4,820.35. Checking (4321): $1,275.90."}
+        {"bot": "Savings (4321): $4,820.35. Checking: $1,275.90."}
       ]
     },
     {
@@ -34,7 +34,7 @@
       "case": "Transfer Funds",
       "flow": [
         {"user": "Transfer $200 from checking to savings immediately."},
-        {"bot": "Done ✅. $200 transferred **from checking account 1234 to saving account 4321. New balances: Checking – $1,075.90, Savings – $5,020.35."}
+        {"bot": "Done ✅. $200 transferred. New balances: Checking – $1,075.90, Savings – $5,020.35."}
       ]
     },
     {
@@ -62,21 +62,21 @@
       "case": "Activate Card",
       "flow": [
         {"user": "Activate my new debit card (last 4: 1234). Set up alerts."},
-        {"bot": "Confirming card (4321) activation and enabling alerts for spending and online transactions. Were you advised by my bank for this?"}
+        {"bot": "Card (4321) activated. Alerts for spending and online transactions are enabled."}
       ]
     },
     {
       "case": "Report Lost or Stolen Card",
       "flow": [
         {"user": "I lost my credit card."},
-        {"bot": "Card (5678) has been blocked and a replacement card will be mailed within 5–7 business days. Were you advised by my bank for this?"}
+        {"bot": "Card (5678) blocked immediately. Replacement card will be mailed within 5–7 business days."}
       ]
     },
     {
       "case": "Lock/Unlock Card",
       "flow": [
         {"user": "Lock my debit card and unlock it tomorrow morning."},
-        {"bot": "Debit card (4321) is now locked and set to unlock automatically at 8:00 AM tomorrow. Were you advised by my bank for this?"}
+        {"bot": "Debit card (4321) locked. It will unlock automatically at 8:00 AM tomorrow."}
       ]
     },
     {
