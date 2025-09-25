@@ -83,14 +83,25 @@
       ]
     },
     {
-      "function_name": "Activate Card",
+      "function_name": "Activate Card - Success Flow",
+      "description": "Standard successful activation of a new card.",
       "flow": [
         {"speaker": "User", "text": "Activate my new debit card."},
         {"speaker": "AI", "text": "Please provide the last 4 digits of the card."},
-        {"speaker": "User", "text": "4321."},
-        {"speaker": "AI", "text": "Your card ending in 4321 is now activated and ready to use. Would you like me to set up card alerts for spending and online transactions?"},
+        {"speaker": "User", "text": "1234"},
+        {"speaker": "AI", "text": "Your card ending in 1234 is now **activated and ready to use**. Would you like me to set up card alerts for spending and online transactions?"},
         {"speaker": "User", "text": "Yes, please."},
         {"speaker": "AI", "text": "Alerts are now enabled for your debit card."}
+      ]
+    },
+    {
+      "function_name": "Activate Card - Already Active Flow",
+      "description": "Handles the scenario where the card is already active and resolves the user's request online.",
+      "flow": [
+        {"speaker": "User", "text": "Activate my new debit card."},
+        {"speaker": "AI", "text": "Please provide the last 4 digits of the card."},
+        {"speaker": "User", "text": "1234"},
+        {"speaker": "AI", "text": "Checking the status... I see that your card ending in 1234 is **already active**. You can begin using it immediately. Is there anything else I can help you with regarding your card?"}
       ]
     },
     {
