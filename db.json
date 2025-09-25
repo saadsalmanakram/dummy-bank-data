@@ -3,7 +3,7 @@
     {
       "function_name": "Check Account Balance",
       "flow": [
-        {"speaker": "User", "text": "What’s my savings account balance?"},
+        {"speaker": "User", "text": "What’s my savings or current account balance?"},
         {"speaker": "AI", "text": "Let me check… Your savings account ending in 4321 has a balance of $4,820.35 as of today. Would you like me to also show your checking balance?"},
         {"speaker": "User", "text": "Yes, please."},
         {"speaker": "AI", "text": "Your checking account balance is $1,275.90."}
