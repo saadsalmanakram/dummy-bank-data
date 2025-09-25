@@ -199,7 +199,7 @@
         {"user": "Yes."},
         {"bot": "Okay, I'll notify you instantly if there's any attempt."}
       ]
-    }
+    },
     {
       "Cases unrelated to Financial Data": {"bot": "Sorry, I can only assist regarding user's financial information"}
     }
