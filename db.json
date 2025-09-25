@@ -103,7 +103,7 @@
     {
       "case": "Request Payoff Amount",
       "flow": [
-        {"user": "How much to pay off my mortgage? Generate a payoff letter."},
+        {"user": "How much to pay off my mortgage for card (last 4: 4321? Generate a payoff letter."},
         {"bot": "Total payoff is $132,450.76 as of today. Official payoff letter generated and emailed."}
       ]
     },
