@@ -1,73 +1,56 @@
 {
-  "banking_conversations": [
+  "account_management": [
     {
-      "category": "Account Management",
-      "functions": [
-        {
-          "function_name": "Check Account Balance",
-          "flow": [
-            {"speaker": "User", "text": "What’s my savings account balance?"},
-            {"speaker": "AI", "text": "Provide last 4 digits of savings account."},
-            {"speaker": "User", "text": "4321"},
-            {"speaker": "AI", "text": "Savings 4321 balance is $4,820.35."}
-          ]
-        }
+      "function_name": "Check Account Balance",
+      "flow": [
+        {"speaker": "User", "text": "What’s my savings account balance?"},
+        {"speaker": "AI", "text": "Provide last 4 digits of savings account."},
+        {"speaker": "User", "text": "4321"},
+        {"speaker": "AI", "text": "Savings 4321 balance is $4,820.35."}
       ]
-    },
+    }
+  ],
+  "payments_transfers": [
     {
-      "category": "Payments & Transfers",
-      "functions": [
-        {
-          "function_name": "Transfer Funds",
-          "flow": [
-            {"speaker": "User", "text": "Transfer $200 from checking to savings."},
-            {"speaker": "AI", "text": "Confirm $200 transfer from checking 1234 to savings 4321?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Done ✅. $200 transferred."}
-          ]
-        }
+      "function_name": "Transfer Funds",
+      "flow": [
+        {"speaker": "User", "text": "Transfer $200 from checking to savings."},
+        {"speaker": "AI", "text": "Confirm $200 transfer from checking 1234 to savings 4321?"},
+        {"speaker": "User", "text": "Yes."},
+        {"speaker": "AI", "text": "Done ✅. $200 transferred."}
       ]
-    },
+    }
+  ],
+  "card_services": [
     {
-      "category": "Card Services",
-      "functions": [
-        {
-          "function_name": "Activate Card",
-          "flow": [
-            {"speaker": "User", "text": "Activate my new debit card."},
-            {"speaker": "AI", "text": "Please provide the last 4 digits of the card."},
-            {"speaker": "User", "text": "4321"},
-            {"speaker": "AI", "text": "Card 4321 is now activated."}
-          ]
-        }
+      "function_name": "Activate Card",
+      "flow": [
+        {"speaker": "User", "text": "Activate my new debit card."},
+        {"speaker": "AI", "text": "Please provide the last 4 digits of the card."},
+        {"speaker": "User", "text": "4321"},
+        {"speaker": "AI", "text": "Card 4321 is now activated."}
       ]
-    },
+    }
+  ],
+  "loan_mortgage": [
     {
-      "category": "Loan & Mortgage",
-      "functions": [
-        {
-          "function_name": "Apply for Loan",
-          "flow": [
-            {"speaker": "User", "text": "I want a personal loan for $10,000."},
-            {"speaker": "AI", "text": "What repayment term? 12, 24, or 36 months?"},
-            {"speaker": "User", "text": "24 months."},
-            {"speaker": "AI", "text": "Loan application for $10,000/24 months submitted. Decision in 1-2 days."}
-          ]
-        }
+      "function_name": "Apply for Loan",
+      "flow": [
+        {"speaker": "User", "text": "I want a personal loan for $10,000."},
+        {"speaker": "AI", "text": "What repayment term? 24 months?"},
+        {"speaker": "User", "text": "24 months."},
+        {"speaker": "AI", "text": "Loan application for $10,000/24 months submitted."}
       ]
-    },
+    }
+  ],
+  "fraud_disputes": [
     {
-      "category": "Fraud & Disputes",
-      "functions": [
-        {
-          "function_name": "Report Fraudulent Activity",
-          "flow": [
-            {"speaker": "User", "text": "I see a charge I didn’t make."},
-            {"speaker": "AI", "text": "Amount and merchant name?"},
-            {"speaker": "User", "text": "$250 from ‘TechMart’."},
-            {"speaker": "AI", "text": "Charge flagged, fraud case opened, card temporarily locked."}
-          ]
-        }
+      "function_name": "Report Fraudulent Activity",
+      "flow": [
+        {"speaker": "User", "text": "I see a charge I didn’t make."},
+        {"speaker": "AI", "text": "Amount and merchant name?"},
+        {"speaker": "User", "text": "$250 from ‘TechMart’."},
+        {"speaker": "AI", "text": "Charge flagged, fraud case opened, card locked."}
       ]
     }
   ]
