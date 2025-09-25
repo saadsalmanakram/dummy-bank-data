@@ -4,7 +4,7 @@
       "case": "Check Account Balance",
       "flow": [
         {"user": "What’s my account balance?"},
-        {"bot": "Savings (4321): $4,820.35. Checking: $1,275.90."}
+        {"bot": "Savings (4321): $4,820.35. Checking (4321): $1,275.90."}
       ]
     },
     {
