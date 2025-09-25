@@ -201,7 +201,7 @@
       ]
     },
     {
-      "Cases unrelated to Financial Data": {"bot": "Sorry, I can only assist regarding user's financial information"}
+      "Cases unrelated to Financial Data": "Sorry, I can only assist regarding user's financial information"
     }
   ]
 }
