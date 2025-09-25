@@ -13,13 +13,11 @@
       "function_name": "View Recent Transactions",
       "flow": [
         {"speaker": "User", "text": "Can you show me my last 5 transactions?"},
-        {"speaker": "AI", "text": "Here are your most recent 5 transactions from checking:\n\n  Starbucks – $6.45 (Sep 9)\n  Uber – $15.20 (Sep 8)\n  Amazon – $42.99 (Sep 7)\n  Payroll Deposit – $2,500.00 (Sep 7)\n  Netflix – $15.99 (Sep 6)\n\n  Would you like me to download a statement for this month?"},
+        {"speaker": "AI", "text": "Here are your most recent 5 transactions from checking:\n\n  Starbucks – $6.45 (Sep 9)\n  Uber – $15.20 (Sep 8)\n  Amazon – $42.99 (Sep 7)\n  Payroll Deposit – $2,500.00 (Sep 7)\n  Netflix – $15.99 (Sep 6)\n\n  Would you like me to download a statement for this month?"},
         {"speaker": "User", "text": "Yes, send it by email."},
         {"speaker": "AI", "text": "Done. I’ve sent your September statement to your registered email."}
       ]
-    }
-  ],
-  "payments_transfers": [
+    },
     {
       "function_name": "Transfer Funds",
       "flow": [
@@ -28,9 +26,7 @@
         {"speaker": "User", "text": "Yes."},
         {"speaker": "AI", "text": "Done ✅. $200 transferred."}
       ]
-    }
-  ],
-  "card_services": [
+    },
     {
       "function_name": "Activate Card",
       "flow": [
@@ -39,9 +35,7 @@
         {"speaker": "User", "text": "4321"},
         {"speaker": "AI", "text": "Card 4321 is now activated."}
       ]
-    }
-  ],
-  "loan_mortgage": [
+    },
     {
       "function_name": "Apply for Loan",
       "flow": [
@@ -50,9 +44,7 @@
         {"speaker": "User", "text": "24 months."},
         {"speaker": "AI", "text": "Loan application for $10,000/24 months submitted."}
       ]
-    }
-  ],
-  "fraud_disputes": [
+    },
     {
       "function_name": "Report Fraudulent Activity",
       "flow": [
