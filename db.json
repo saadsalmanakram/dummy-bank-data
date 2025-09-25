@@ -180,6 +180,25 @@
         {"user": "Dispute a $99 charge from TechShop."},
         {"bot": "Understood. I’ve filed a dispute for the $99 charge on Sept 7. You’ll receive a provisional credit in 24 hours while we investigate. Expect a resolution in 7–10 business days."}
       ]
+    },
+    {
+      "case": "Verify Suspicious Transaction",
+      "flow": [
+        {"bot": "I noticed a $500 charge at the Apple Store in New York. Did you make this purchase?"},
+        {"user": "No, that wasn’t me."},
+        {"bot": "Thanks for confirming. I've blocked the transaction and frozen your card to prevent further misuse. Would you like me to issue a replacement card right now?"},
+        {"user": "Yes."},
+        {"bot": "Replacement card ordered. You'll get it within 5 days."}
+      ]
+    },
+    {
+      "case": "Freeze Account",
+      "flow": [
+        {"user": "Freeze my checking account immediately."},
+        {"bot": "Done. Your checking account is frozen, and no new transactions will be allowed. Would you like to receive alerts if anyone attempts to access it?"},
+        {"user": "Yes."},
+        {"bot": "Okay, I'll notify you instantly if there's any attempt."}
+      ]
     }
   ]
 }
