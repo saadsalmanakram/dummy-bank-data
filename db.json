@@ -1,7 +1,7 @@
 {
   "account_management": [
     {
-      "function_name": "Check Account Balance",
+      "case": "Check Account Balance",
       "flow": [
         {"user": "What’s my savings or current account balance?"},
         {"bot": "Let me check… Your savings account ending in 4321 has a balance of $4,820.35 as of today. Would you like me to also show your checking balance?"},
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "function_name": "View Recent Transactions",
+      "case": "View Recent Transactions",
       "flow": [
         {"user": "Can you show me my last 5 transactions?"},
         {"bot": "Here are your most recent 5 transactions from checking:\n\n Starbucks – $6.45 (Sep 9)\n Uber – $15.20 (Sep 8)\n Amazon – $42.99 (Sep 7)\n Payroll Deposit – $2,500.00 (Sep 7)\n Netflix – $15.99 (Sep 6)\n\n Would you like me to download a statement for this month?"},
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "function_name": "Update Contact Information",
+      "case": "Update Contact Information",
       "flow": [
         {"user": "I need to update my phone number."},
         {"bot": "Of course. What’s your new phone number?"},
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "function_name": "Order Account Statements",
+      "case": "Order Account Statements",
       "flow": [
         {"user": "I need my March statement."},
         {"bot": "Do you want it for your checking account, savings, or both?"},
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "function_name": "Transfer Funds",
+      "case": "Transfer Funds",
       "flow": [
         {"user": "Transfer $200 from my checking to savings."},
         {"bot": "Got it. Transferring $200 from checking ending 1234 to savings ending 4321. Do you want this transfer processed immediately?"},
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "function_name": "Schedule Recurring Payments",
+      "case": "Schedule Recurring Payments",
       "flow": [
         {"user": "Schedule my rent payment."},
         {"bot": "Sure. How much is the rent, and who’s the payee?"},
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "function_name": "Pay Bills",
+      "case": "Pay Bills",
       "flow": [
         {"user": "Pay my electricity bill."},
         {"bot": "I see your latest bill from CityPower is $85.00, due on Sept 12. Do you want me to pay it now?"},
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "function_name": "Cancel Scheduled Transfer",
+      "case": "Cancel Scheduled Transfer",
       "flow": [
         {"user": "Cancel the transfer to John tomorrow."},
         {"bot": "You have a $150 transfer to John Smith scheduled for Sept 11. Do you want to cancel it?"},
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "function_name": "Activate Card",
+      "case": "Activate Card",
       "flow": [
         
         {"user": "Activate my new debit card."},
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "function_name": "Report Lost or Stolen Card",
+      "case": "Report Lost or Stolen Card",
       "flow": [
         {"user": "I lost my credit card."},
         {"bot": "I’m sorry to hear that. I’ll block your card immediately to prevent misuse. The card ending in 5678 has been blocked. Do you want me to issue a replacement?"},
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "function_name": "Lock/Unlock Card",
+      "case": "Lock/Unlock Card",
       "flow": [
         {"user": "Lock my debit card."},
         {"bot": "Your debit card ending 4321 is now locked. You won’t be able to use it for any transactions. Would you like me to unlock it later automatically?"},
@@ -113,7 +113,7 @@
       ]
     },
     {
-      "function_name": "Request Replacement Card",
+      "case": "Request Replacement Card",
       "flow": [
         {"user": "Request a replacement for my damaged card."},
         {"bot": "Got it. Would you like the new card sent to your registered home address?"},
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "function_name": "Apply for Loan/Mortgage",
+      "case": "Apply for Loan/Mortgage",
       "flow": [
         {"user": "I want to apply for a personal loan."},
         {"bot": "Sure, let’s start. How much would you like to borrow?"},
@@ -135,7 +135,7 @@
       ]
     },
     {
-      "function_name": "Check Loan Status",
+      "case": "Check Loan Status",
       "flow": [
         {"user": "What’s the status of my car loan application?"},
         {"bot": "Checking… Your car loan application for $15,000 is currently under review. Expected decision: within 24 hours. Would you like me to notify you as soon as it’s approved?"},
@@ -144,7 +144,7 @@
       ]
     },
     {
-      "function_name": "Request Payoff Amount",
+      "case": "Request Payoff Amount",
       "flow": [
         {"user": "How much do I need to pay off my mortgage?"},
         {"bot": "As of today, your total payoff amount is $132,450.76, which includes principal and interest. Would you like me to generate a payoff letter?"},
@@ -153,7 +153,7 @@
       ]
     },
     {
-      "function_name": "Modify Payment Schedule",
+      "case": "Modify Payment Schedule",
       "flow": [
         {"user": "Can I change my loan payment date?"},
         {"bot": "Yes. Your current due date is the 1st of each month. What new date would you prefer?"},
@@ -164,7 +164,7 @@
       ]
     },
     {
-      "function_name": "Report Fraudulent Activity",
+      "case": "Report Fraudulent Activity",
       "flow": [
         {"user": "I see a charge I didn’t make."},
         {"bot": "Can you provide the amount and merchant name?"},
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "function_name": "Dispute a Transaction",
+      "case": "Dispute a Transaction",
       "flow": [
         {"user": "Dispute a $99 charge from TechShop."},
         {"bot": "Understood. I’ve filed a dispute for the $99 charge on Sept 7. You’ll receive a provisional credit in 24 hours while we investigate. Expect a resolution in 7–10 business days."}
