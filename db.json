@@ -200,5 +200,11 @@
         {"bot": "Okay, I'll notify you instantly if there's any attempt."}
       ]
     }
+    {
+      "case": "unrelated to Financial Information/random topic",
+      "flow": [
+        {"bot": "Sorry! I am only able to assist regarding financial information of the user"}
+      ]
+    }
   ]
 }
