@@ -7,42 +7,9 @@
           "function_name": "Check Account Balance",
           "flow": [
             {"speaker": "User", "text": "What’s my savings account balance?"},
-            {"speaker": "AI", "text": "To protect your information, I need to confirm your identity. Please provide the last four digits of your savings account number."},
+            {"speaker": "AI", "text": "Provide last 4 digits of savings account."},
             {"speaker": "User", "text": "4321"},
-            {"speaker": "AI", "text": "Thank you. Your savings account ending in 4321 has a balance of $4,820.35 as of today. Would you also like me to show your checking account balance?"},
-            {"speaker": "User", "text": "Yes, please."},
-            {"speaker": "AI", "text": "Your checking account balance is $1,275.90."}
-          ]
-        },
-        {
-          "function_name": "View Recent Transactions",
-          "flow": [
-            {"speaker": "User", "text": "Can you show me my last 5 transactions?"},
-            {"speaker": "AI", "text": "Here are your most recent 5 transactions from your checking account ending in 1234: Starbucks – $6.45 (Sep 9) Uber – $15.20 (Sep 8) Amazon – $42.99 (Sep 7) Payroll Deposit – $2,500.00 (Sep 7) Netflix – $15.99 (Sep 6) Would you like to download a statement for this month?"},
-            {"speaker": "User", "text": "Yes, send it by email."},
-            {"speaker": "AI", "text": "Done, I've sent your September statement to your registered email."}
-          ]
-        },
-        {
-          "function_name": "Update Contact Information",
-          "flow": [
-            {"speaker": "User", "text": "I need to update my phone number."},
-            {"speaker": "AI", "text": "Great. Now, what's your new phone number?"},
-            {"speaker": "User", "text": "555-987-6543"},
-            {"speaker": "AI", "text": "I’ve updated your phone number to 555-987-6543. You’ll receive a confirmation code shortly. Please provide that code here."},
-            {"speaker": "User", "text": "8421"},
-            {"speaker": "AI", "text": "Perfect! Your contact information has been successfully updated."}
-          ]
-        },
-        {
-          "function_name": "Order Account Statements",
-          "flow": [
-            {"speaker": "User", "text": "I need my March statement."},
-            {"speaker": "AI", "text": "Do you want it for your checking account, savings, or both?"},
-            {"speaker": "User", "text": "Checking account."},
-            {"speaker": "AI", "text": "I’ve generated your March checking account statement and emailed it to you. Would you also like a downloadable PDF here?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Here’s your PDF download link. ✅"}
+            {"speaker": "AI", "text": "Savings 4321 balance is $4,820.35."}
           ]
         }
       ]
@@ -51,45 +18,12 @@
       "category": "Payments & Transfers",
       "functions": [
         {
-          "function_name": "Transfer Funds (Internal/External)",
+          "function_name": "Transfer Funds",
           "flow": [
-            {"speaker": "User", "text": "Transfer $200 from my checking to savings."},
-            {"speaker": "AI", "text": "Got it. Transferring $200 from checking ending 1234 to savings ending 4321. Do you want this transfer processed immediately?"},
+            {"speaker": "User", "text": "Transfer $200 from checking to savings."},
+            {"speaker": "AI", "text": "Confirm $200 transfer from checking 1234 to savings 4321?"},
             {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Done ✅. $200 has been transferred. Your new balances are: Checking – $1,075.90, Savings – $5,020.35."}
-          ]
-        },
-        {
-          "function_name": "Schedule Recurring Payments",
-          "flow": [
-            {"speaker": "User", "text": "Schedule my rent payment."},
-            {"speaker": "AI", "text": "Sure. How much is the rent, and who’s the payee?"},
-            {"speaker": "User", "text": "$1,200 to Greenview Apartments."},
-            {"speaker": "AI", "text": "Got it. Do you want this to repeat monthly?"},
-            {"speaker": "User", "text": "Yes, on the 1st of every month."},
-            {"speaker": "AI", "text": "Perfect. I’ve scheduled $1,200 monthly payments to Greenview Apartments starting Oct 1. Would you like reminders before each payment?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Okay, I’ll notify you 2 days before each rent payment."}
-          ]
-        },
-        {
-          "function_name": "Pay Bills",
-          "flow": [
-            {"speaker": "User", "text": "Pay my electricity bill."},
-            {"speaker": "AI", "text": "I see your latest bill from CityPower is $85.00, due on Sept 12. Do you want me to pay it now?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Your electricity bill of $85 has been paid. Confirmation number: CP-993842. ✅"}
-          ]
-        },
-        {
-          "function_name": "Cancel Scheduled Transfer",
-          "flow": [
-            {"speaker": "User", "text": "Cancel the transfer to John tomorrow."},
-            {"speaker": "AI", "text": "You have a $150 transfer to John Smith scheduled for Sept 11. Do you want to cancel it?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "It’s canceled. No money will be transferred tomorrow. Would you like me to notify John?"},
-            {"speaker": "User", "text": "No, that’s fine."},
-            {"speaker": "AI", "text": "Got it. Transfer canceled successfully."}
+            {"speaker": "AI", "text": "Done ✅. $200 transferred."}
           ]
         }
       ]
@@ -102,37 +36,8 @@
           "flow": [
             {"speaker": "User", "text": "Activate my new debit card."},
             {"speaker": "AI", "text": "Please provide the last 4 digits of the card."},
-            {"speaker": "User", "text": "4321."},
-            {"speaker": "AI", "text": "Your card ending in 4321 is now activated and ready to use. Would you like me to set up card alerts for spending and online transactions?"},
-            {"speaker": "User", "text": "Yes, please."},
-            {"speaker": "AI", "text": "Alerts are now enabled for your debit card."}
-          ]
-        },
-        {
-          "function_name": "Report Lost or Stolen Card",
-          "flow": [
-            {"speaker": "User", "text": "I lost my credit card."},
-            {"speaker": "AI", "text": "I’m sorry to hear that. I’ll block your card immediately to prevent misuse. The card ending in 5678 has been blocked. Do you want me to issue a replacement?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "A replacement card will be mailed to your address within 5–7 business days."}
-          ]
-        },
-        {
-          "function_name": "Lock/Unlock Card",
-          "flow": [
-            {"speaker": "User", "text": "Lock my debit card."},
-            {"speaker": "AI", "text": "Your debit card ending 4321 is now locked. You won’t be able to use it for any transactions. Would you like me to unlock it later automatically?"},
-            {"speaker": "User", "text": "Yes, unlock it tomorrow morning."},
-            {"speaker": "AI", "text": "Okay, your card will unlock at 8:00 AM tomorrow."}
-          ]
-        },
-        {
-          "function_name": "Request Replacement Card",
-          "flow": [
-            {"speaker": "User", "text": "Request a replacement for my damaged card."},
-            {"speaker": "AI", "text": "Got it. Would you like the new card sent to your registered home address?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Your replacement card will arrive in 5–7 business days. Your existing card will remain active until you activate the new one."}
+            {"speaker": "User", "text": "4321"},
+            {"speaker": "AI", "text": "Card 4321 is now activated."}
           ]
         }
       ]
@@ -141,45 +46,12 @@
       "category": "Loan & Mortgage",
       "functions": [
         {
-          "function_name": "Apply for Loan/Mortgage",
+          "function_name": "Apply for Loan",
           "flow": [
-            {"speaker": "User", "text": "I want to apply for a personal loan."},
-            {"speaker": "AI", "text": "Sure, let’s start. How much would you like to borrow?"},
-            {"speaker": "User", "text": "$10,000."},
-            {"speaker": "AI", "text": "And what repayment term are you interested in? 12, 24, or 36 months?"},
+            {"speaker": "User", "text": "I want a personal loan for $10,000."},
+            {"speaker": "AI", "text": "What repayment term? 12, 24, or 36 months?"},
             {"speaker": "User", "text": "24 months."},
-            {"speaker": "AI", "text": "Based on your credit profile, you may qualify for a personal loan of $10,000 at 7.5% APR over 24 months. Estimated monthly payment: $450. Would you like me to submit the application?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Your application has been submitted. You’ll receive a decision within 1–2 business days."}
-          ]
-        },
-        {
-          "function_name": "Check Loan Status",
-          "flow": [
-            {"speaker": "User", "text": "What’s the status of my car loan application?"},
-            {"speaker": "AI", "text": "Checking… Your car loan application for $15,000 is currently under review. Expected decision: within 24 hours. Would you like me to notify you as soon as it’s approved?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Great, I’ll send you an instant update once it’s approved."}
-          ]
-        },
-        {
-          "function_name": "Request Payoff Amount",
-          "flow": [
-            {"speaker": "User", "text": "How much do I need to pay off my mortgage?"},
-            {"speaker": "AI", "text": "As of today, your total payoff amount is $132,450.76, which includes principal and interest. Would you like me to generate a payoff letter?"},
-            {"speaker": "User", "text": "Yes, please."},
-            {"speaker": "AI", "text": "I’ve generated your official payoff letter and emailed it to you."}
-          ]
-        },
-        {
-          "function_name": "Modify Payment Schedule",
-          "flow": [
-            {"speaker": "User", "text": "Can I change my loan payment date?"},
-            {"speaker": "AI", "text": "Yes. Your current due date is the 1st of each month. What new date would you prefer?"},
-            {"speaker": "User", "text": "The 15th."},
-            {"speaker": "AI", "text": "Okay, your loan payment date has been changed to the 15th of each month starting next cycle. Would you like reminders before payments are due?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Done. I’ll remind you 3 days before each payment."}
+            {"speaker": "AI", "text": "Loan application for $10,000/24 months submitted. Decision in 1-2 days."}
           ]
         }
       ]
@@ -191,37 +63,9 @@
           "function_name": "Report Fraudulent Activity",
           "flow": [
             {"speaker": "User", "text": "I see a charge I didn’t make."},
-            {"speaker": "AI", "text": "Can you provide the amount and merchant name?"},
-            {"speaker": "User", "text": "$250 from ‘TechMart’ yesterday."},
-            {"speaker": "AI", "text": "Thank you. I’ve flagged this charge and opened a fraud case. I’ve also temporarily locked your card. Do you want me to issue a new card now?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "A replacement card will be sent in 3–5 days. You’ll receive updates on your fraud case by SMS and email."}
-          ]
-        },
-        {
-          "function_name": "Dispute a Transaction",
-          "flow": [
-            {"speaker": "User", "text": "Dispute a $99 charge from TechShop."},
-            {"speaker": "AI", "text": "Understood. I’ve filed a dispute for the $99 charge on Sept 7. You’ll receive a provisional credit in 24 hours while we investigate. Expect a resolution in 7–10 business days."}
-          ]
-        },
-        {
-          "function_name": "Verify Suspicious Transaction",
-          "flow": [
-            {"speaker": "AI", "text": "I noticed a $500 charge at the Apple Store in New York. Did you make this purchase?"},
-            {"speaker": "User", "text": "No, that wasn’t me."},
-            {"speaker": "AI", "text": "Thanks for confirming. I’ve blocked the transaction and frozen your card to prevent further misuse. Would you like me to issue a replacement card right now?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Replacement card ordered. You’ll get it within 5 days."}
-          ]
-        },
-        {
-          "function_name": "Freeze Account",
-          "flow": [
-            {"speaker": "User", "text": "Freeze my checking account immediately."},
-            {"speaker": "AI", "text": "Done. Your checking account is frozen, and no new transactions will be allowed. Would you like to receive alerts if anyone attempts to access it?"},
-            {"speaker": "User", "text": "Yes."},
-            {"speaker": "AI", "text": "Okay, I’ll notify you instantly if there’s any attempt."}
+            {"speaker": "AI", "text": "Amount and merchant name?"},
+            {"speaker": "User", "text": "$250 from ‘TechMart’."},
+            {"speaker": "AI", "text": "Charge flagged, fraud case opened, card temporarily locked."}
           ]
         }
       ]
