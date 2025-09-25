@@ -8,6 +8,15 @@
         {"speaker": "User", "text": "4321"},
         {"speaker": "AI", "text": "Savings 4321 balance is $4,820.35."}
       ]
+    },
+    {
+      "function_name": "View Recent Transactions",
+      "flow": [
+        {"speaker": "User", "text": "Can you show me my last 5 transactions?"},
+        {"speaker": "AI", "text": "Here are your most recent 5 transactions from checking:\n\n  Starbucks – $6.45 (Sep 9)\n  Uber – $15.20 (Sep 8)\n  Amazon – $42.99 (Sep 7)\n  Payroll Deposit – $2,500.00 (Sep 7)\n  Netflix – $15.99 (Sep 6)\n\n  Would you like me to download a statement for this month?"},
+        {"speaker": "User", "text": "Yes, send it by email."},
+        {"speaker": "AI", "text": "Done. I’ve sent your September statement to your registered email."}
+      ]
     }
   ],
   "payments_transfers": [
