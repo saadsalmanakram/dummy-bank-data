@@ -1,556 +1,230 @@
-[
-  {
-    "user_id": "user_01",
-    "accounts": [
-      {
-        "account_id": "CHK-001-1234",
-        "account_type": "checking",
-        "balance": 1275.90,
-        "is_primary": true
-      },
-      {
-        "account_id": "SAV-002-4321",
-        "account_type": "savings",
-        "balance": 4820.35,
-        "is_primary": false
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-987654",
-        "account_id": "CHK-001-1234",
-        "date": "2025-09-09",
-        "amount": -6.45,
-        "description": "Starbucks"
-      },
-      {
-        "transaction_id": "TRN-987653",
-        "account_id": "CHK-001-1234",
-        "date": "2025-09-08",
-        "amount": -15.20,
-        "description": "Uber"
-      },
-      {
-        "transaction_id": "TRN-987652",
-        "account_id": "CHK-001-1234",
-        "date": "2025-09-07",
-        "amount": -42.99,
-        "description": "Amazon"
-      }
-      {
-        "transaction_id": "TRN-987651",
-        "account_id": "CHK-001-1234",
-        "date": "2025-09-06",
-        "amount": -42.99,
-        "description": "Payroll Deposit"
-      }
-      {
-        "transaction_id": "TRN-987650",
-        "account_id": "CHK-001-1234",
-        "date": "2025-09-05",
-        "amount": -42.99,
-        "description": "Netflix"
-      }
-    ],
-    "loans": [
-      {
-        "loan_id": "LOAN-555666",
-        "loan_type": "personal",
-        "status": "under_review",
-        "amount": 10000.00
-      }
-    ],
-    "contact_info": {
-      "phone_number": "555-123-4567",
-      "email": "user01@example.com"
+{
+  "banking_conversations": [
+    {
+      "category": "Account Management",
+      "functions": [
+        {
+          "function_name": "Check Account Balance",
+          "flow": [
+            {"speaker": "User", "text": "What’s my savings account balance?"},
+            {"speaker": "AI", "text": "To protect your information, I need to confirm your identity. Please provide the last four digits of your savings account number."},
+            {"speaker": "User", "text": "4321"},
+            {"speaker": "AI", "text": "Thank you. Your savings account ending in 4321 has a balance of $4,820.35 as of today. Would you also like me to show your checking account balance?"},
+            {"speaker": "User", "text": "Yes, please."},
+            {"speaker": "AI", "text": "Your checking account balance is $1,275.90."}
+          ]
+        },
+        {
+          "function_name": "View Recent Transactions",
+          "flow": [
+            {"speaker": "User", "text": "Can you show me my last 5 transactions?"},
+            {"speaker": "AI", "text": "Here are your most recent 5 transactions from your checking account ending in 1234: Starbucks – $6.45 (Sep 9) Uber – $15.20 (Sep 8) Amazon – $42.99 (Sep 7) Payroll Deposit – $2,500.00 (Sep 7) Netflix – $15.99 (Sep 6) Would you like to download a statement for this month?"},
+            {"speaker": "User", "text": "Yes, send it by email."},
+            {"speaker": "AI", "text": "Done, I've sent your September statement to your registered email."}
+          ]
+        },
+        {
+          "function_name": "Update Contact Information",
+          "flow": [
+            {"speaker": "User", "text": "I need to update my phone number."},
+            {"speaker": "AI", "text": "Great. Now, what's your new phone number?"},
+            {"speaker": "User", "text": "555-987-6543"},
+            {"speaker": "AI", "text": "I’ve updated your phone number to 555-987-6543. You’ll receive a confirmation code shortly. Please provide that code here."},
+            {"speaker": "User", "text": "8421"},
+            {"speaker": "AI", "text": "Perfect! Your contact information has been successfully updated."}
+          ]
+        },
+        {
+          "function_name": "Order Account Statements",
+          "flow": [
+            {"speaker": "User", "text": "I need my March statement."},
+            {"speaker": "AI", "text": "Do you want it for your checking account, savings, or both?"},
+            {"speaker": "User", "text": "Checking account."},
+            {"speaker": "AI", "text": "I’ve generated your March checking account statement and emailed it to you. Would you also like a downloadable PDF here?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Here’s your PDF download link. ✅"}
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Payments & Transfers",
+      "functions": [
+        {
+          "function_name": "Transfer Funds (Internal/External)",
+          "flow": [
+            {"speaker": "User", "text": "Transfer $200 from my checking to savings."},
+            {"speaker": "AI", "text": "Got it. Transferring $200 from checking ending 1234 to savings ending 4321. Do you want this transfer processed immediately?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Done ✅. $200 has been transferred. Your new balances are: Checking – $1,075.90, Savings – $5,020.35."}
+          ]
+        },
+        {
+          "function_name": "Schedule Recurring Payments",
+          "flow": [
+            {"speaker": "User", "text": "Schedule my rent payment."},
+            {"speaker": "AI", "text": "Sure. How much is the rent, and who’s the payee?"},
+            {"speaker": "User", "text": "$1,200 to Greenview Apartments."},
+            {"speaker": "AI", "text": "Got it. Do you want this to repeat monthly?"},
+            {"speaker": "User", "text": "Yes, on the 1st of every month."},
+            {"speaker": "AI", "text": "Perfect. I’ve scheduled $1,200 monthly payments to Greenview Apartments starting Oct 1. Would you like reminders before each payment?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Okay, I’ll notify you 2 days before each rent payment."}
+          ]
+        },
+        {
+          "function_name": "Pay Bills",
+          "flow": [
+            {"speaker": "User", "text": "Pay my electricity bill."},
+            {"speaker": "AI", "text": "I see your latest bill from CityPower is $85.00, due on Sept 12. Do you want me to pay it now?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Your electricity bill of $85 has been paid. Confirmation number: CP-993842. ✅"}
+          ]
+        },
+        {
+          "function_name": "Cancel Scheduled Transfer",
+          "flow": [
+            {"speaker": "User", "text": "Cancel the transfer to John tomorrow."},
+            {"speaker": "AI", "text": "You have a $150 transfer to John Smith scheduled for Sept 11. Do you want to cancel it?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "It’s canceled. No money will be transferred tomorrow. Would you like me to notify John?"},
+            {"speaker": "User", "text": "No, that’s fine."},
+            {"speaker": "AI", "text": "Got it. Transfer canceled successfully."}
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Card Services",
+      "functions": [
+        {
+          "function_name": "Activate Card",
+          "flow": [
+            {"speaker": "User", "text": "Activate my new debit card."},
+            {"speaker": "AI", "text": "Please provide the last 4 digits of the card."},
+            {"speaker": "User", "text": "4321."},
+            {"speaker": "AI", "text": "Your card ending in 4321 is now activated and ready to use. Would you like me to set up card alerts for spending and online transactions?"},
+            {"speaker": "User", "text": "Yes, please."},
+            {"speaker": "AI", "text": "Alerts are now enabled for your debit card."}
+          ]
+        },
+        {
+          "function_name": "Report Lost or Stolen Card",
+          "flow": [
+            {"speaker": "User", "text": "I lost my credit card."},
+            {"speaker": "AI", "text": "I’m sorry to hear that. I’ll block your card immediately to prevent misuse. The card ending in 5678 has been blocked. Do you want me to issue a replacement?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "A replacement card will be mailed to your address within 5–7 business days."}
+          ]
+        },
+        {
+          "function_name": "Lock/Unlock Card",
+          "flow": [
+            {"speaker": "User", "text": "Lock my debit card."},
+            {"speaker": "AI", "text": "Your debit card ending 4321 is now locked. You won’t be able to use it for any transactions. Would you like me to unlock it later automatically?"},
+            {"speaker": "User", "text": "Yes, unlock it tomorrow morning."},
+            {"speaker": "AI", "text": "Okay, your card will unlock at 8:00 AM tomorrow."}
+          ]
+        },
+        {
+          "function_name": "Request Replacement Card",
+          "flow": [
+            {"speaker": "User", "text": "Request a replacement for my damaged card."},
+            {"speaker": "AI", "text": "Got it. Would you like the new card sent to your registered home address?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Your replacement card will arrive in 5–7 business days. Your existing card will remain active until you activate the new one."}
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Loan & Mortgage",
+      "functions": [
+        {
+          "function_name": "Apply for Loan/Mortgage",
+          "flow": [
+            {"speaker": "User", "text": "I want to apply for a personal loan."},
+            {"speaker": "AI", "text": "Sure, let’s start. How much would you like to borrow?"},
+            {"speaker": "User", "text": "$10,000."},
+            {"speaker": "AI", "text": "And what repayment term are you interested in? 12, 24, or 36 months?"},
+            {"speaker": "User", "text": "24 months."},
+            {"speaker": "AI", "text": "Based on your credit profile, you may qualify for a personal loan of $10,000 at 7.5% APR over 24 months. Estimated monthly payment: $450. Would you like me to submit the application?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Your application has been submitted. You’ll receive a decision within 1–2 business days."}
+          ]
+        },
+        {
+          "function_name": "Check Loan Status",
+          "flow": [
+            {"speaker": "User", "text": "What’s the status of my car loan application?"},
+            {"speaker": "AI", "text": "Checking… Your car loan application for $15,000 is currently under review. Expected decision: within 24 hours. Would you like me to notify you as soon as it’s approved?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Great, I’ll send you an instant update once it’s approved."}
+          ]
+        },
+        {
+          "function_name": "Request Payoff Amount",
+          "flow": [
+            {"speaker": "User", "text": "How much do I need to pay off my mortgage?"},
+            {"speaker": "AI", "text": "As of today, your total payoff amount is $132,450.76, which includes principal and interest. Would you like me to generate a payoff letter?"},
+            {"speaker": "User", "text": "Yes, please."},
+            {"speaker": "AI", "text": "I’ve generated your official payoff letter and emailed it to you."}
+          ]
+        },
+        {
+          "function_name": "Modify Payment Schedule",
+          "flow": [
+            {"speaker": "User", "text": "Can I change my loan payment date?"},
+            {"speaker": "AI", "text": "Yes. Your current due date is the 1st of each month. What new date would you prefer?"},
+            {"speaker": "User", "text": "The 15th."},
+            {"speaker": "AI", "text": "Okay, your loan payment date has been changed to the 15th of each month starting next cycle. Would you like reminders before payments are due?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Done. I’ll remind you 3 days before each payment."}
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Fraud & Disputes",
+      "functions": [
+        {
+          "function_name": "Report Fraudulent Activity",
+          "flow": [
+            {"speaker": "User", "text": "I see a charge I didn’t make."},
+            {"speaker": "AI", "text": "Can you provide the amount and merchant name?"},
+            {"speaker": "User", "text": "$250 from ‘TechMart’ yesterday."},
+            {"speaker": "AI", "text": "Thank you. I’ve flagged this charge and opened a fraud case. I’ve also temporarily locked your card. Do you want me to issue a new card now?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "A replacement card will be sent in 3–5 days. You’ll receive updates on your fraud case by SMS and email."}
+          ]
+        },
+        {
+          "function_name": "Dispute a Transaction",
+          "flow": [
+            {"speaker": "User", "text": "Dispute a $99 charge from TechShop."},
+            {"speaker": "AI", "text": "Understood. I’ve filed a dispute for the $99 charge on Sept 7. You’ll receive a provisional credit in 24 hours while we investigate. Expect a resolution in 7–10 business days."}
+          ]
+        },
+        {
+          "function_name": "Verify Suspicious Transaction",
+          "flow": [
+            {"speaker": "AI", "text": "I noticed a $500 charge at the Apple Store in New York. Did you make this purchase?"},
+            {"speaker": "User", "text": "No, that wasn’t me."},
+            {"speaker": "AI", "text": "Thanks for confirming. I’ve blocked the transaction and frozen your card to prevent further misuse. Would you like me to issue a replacement card right now?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Replacement card ordered. You’ll get it within 5 days."}
+          ]
+        },
+        {
+          "function_name": "Freeze Account",
+          "flow": [
+            {"speaker": "User", "text": "Freeze my checking account immediately."},
+            {"speaker": "AI", "text": "Done. Your checking account is frozen, and no new transactions will be allowed. Would you like to receive alerts if anyone attempts to access it?"},
+            {"speaker": "User", "text": "Yes."},
+            {"speaker": "AI", "text": "Okay, I’ll notify you instantly if there’s any attempt."}
+          ]
+        }
+      ]
     }
-  },
-  {
-    "user_id": "user_02",
-    "accounts": [
-      {
-        "account_id": "CHK-001-5678",
-        "account_type": "checking",
-        "balance": 500.25,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-112233",
-        "account_id": "CHK-001-5678",
-        "date": "2025-09-15",
-        "amount": -50.00,
-        "description": "Grocery Store"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-987-6543",
-      "email": "user02@example.com"
-    }
-  },
-  {
-    "user_id": "user_03",
-    "accounts": [
-      {
-        "account_id": "SAV-002-2468",
-        "account_type": "savings",
-        "balance": 15000.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-445566",
-        "account_id": "SAV-002-2468",
-        "date": "2025-09-10",
-        "amount": 500.00,
-        "description": "Payroll Deposit"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-444-3333",
-      "email": "user03@example.com"
-    }
-  },
-  {
-    "user_id": "user_04",
-    "accounts": [
-      {
-        "account_id": "CC-003-8899",
-        "account_type": "credit_card",
-        "balance": -345.50,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-778899",
-        "account_id": "CC-003-8899",
-        "date": "2025-09-16",
-        "amount": -345.50,
-        "description": "Online Shopping"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-222-1111",
-      "email": "user04@example.com"
-    }
-  },
-  {
-    "user_id": "user_05",
-    "accounts": [
-      {
-        "account_id": "CHK-001-9012",
-        "account_type": "checking",
-        "balance": 2500.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-123456",
-        "account_id": "CHK-001-9012",
-        "date": "2025-09-17",
-        "amount": 2500.00,
-        "description": "Payroll Deposit"
-      }
-    ],
-    "loans": [
-      {
-        "loan_id": "LOAN-112233",
-        "loan_type": "mortgage",
-        "status": "active",
-        "amount": 132450.76
-      }
-    ],
-    "contact_info": {
-      "phone_number": "555-777-8888",
-      "email": "user05@example.com"
-    }
-  },
-  {
-    "user_id": "user_06",
-    "accounts": [
-      {
-        "account_id": "SAV-002-3344",
-        "account_type": "savings",
-        "balance": 750.50,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-778899",
-        "account_id": "SAV-002-3344",
-        "date": "2025-09-18",
-        "amount": 25.00,
-        "description": "Interest Payment"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-666-5555",
-      "email": "user06@example.com"
-    }
-  },
-  {
-    "user_id": "user_07",
-    "accounts": [
-      {
-        "account_id": "CHK-001-2233",
-        "account_type": "checking",
-        "balance": 100.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-001122",
-        "account_id": "CHK-001-2233",
-        "date": "2025-09-19",
-        "amount": -99.00,
-        "description": "TechShop"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-555-4444",
-      "email": "user07@example.com"
-    }
-  },
-  {
-    "user_id": "user_08",
-    "accounts": [
-      {
-        "account_id": "SAV-002-1111",
-        "account_type": "savings",
-        "balance": 3000.00,
-        "is_primary": false
-      },
-      {
-        "account_id": "CC-003-2222",
-        "account_type": "credit_card",
-        "balance": -50.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-334455",
-        "account_id": "CC-003-2222",
-        "date": "2025-09-18",
-        "amount": -50.00,
-        "description": "Apple Store"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-888-9999",
-      "email": "user08@example.com"
-    }
-  },
-  {
-    "user_id": "user_09",
-    "accounts": [
-      {
-        "account_id": "CHK-001-9988",
-        "account_type": "checking",
-        "balance": 75.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-667788",
-        "account_id": "CHK-001-9988",
-        "date": "2025-09-17",
-        "amount": -25.00,
-        "description": "TechMart"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-123-1234",
-      "email": "user09@example.com"
-    }
-  },
-  {
-    "user_id": "user_10",
-    "accounts": [
-      {
-        "account_id": "SAV-002-7788",
-        "account_type": "savings",
-        "balance": 2000.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-009988",
-        "account_id": "SAV-002-7788",
-        "date": "2025-09-16",
-        "amount": 200.00,
-        "description": "Transfer from Checking"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-987-9876",
-      "email": "user10@example.com"
-    }
-  },
-  {
-    "user_id": "user_11",
-    "accounts": [
-      {
-        "account_id": "CHK-001-4444",
-        "account_type": "checking",
-        "balance": 350.50,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-445544",
-        "account_id": "CHK-001-4444",
-        "date": "2025-09-15",
-        "amount": -85.00,
-        "description": "CityPower"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-333-2222",
-      "email": "user11@example.com"
-    }
-  },
-  {
-    "user_id": "user_12",
-    "accounts": [
-      {
-        "account_id": "CC-003-5566",
-        "account_type": "credit_card",
-        "balance": -50.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-112211",
-        "account_id": "CC-003-5566",
-        "date": "2025-09-14",
-        "amount": -50.00,
-        "description": "Netflix"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-222-3333",
-      "email": "user12@example.com"
-    }
-  },
-  {
-    "user_id": "user_13",
-    "accounts": [
-      {
-        "account_id": "CHK-001-8877",
-        "account_type": "checking",
-        "balance": 1200.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-998877",
-        "account_id": "CHK-001-8877",
-        "date": "2025-09-13",
-        "amount": -1200.00,
-        "description": "Greenview Apartments"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-444-5555",
-      "email": "user13@example.com"
-    }
-  },
-  {
-    "user_id": "user_14",
-    "accounts": [
-      {
-        "account_id": "SAV-002-9988",
-        "account_type": "savings",
-        "balance": 9500.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-667788",
-        "account_id": "SAV-002-9988",
-        "date": "2025-09-12",
-        "amount": 25.00,
-        "description": "Interest Payment"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-777-6666",
-      "email": "user14@example.com"
-    }
-  },
-  {
-    "user_id": "user_15",
-    "accounts": [
-      {
-        "account_id": "CHK-001-3322",
-        "account_type": "checking",
-        "balance": 450.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-334455",
-        "account_id": "CHK-001-3322",
-        "date": "2025-09-11",
-        "amount": -45.00,
-        "description": "Coffee Shop"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-888-7777",
-      "email": "user15@example.com"
-    }
-  },
-  {
-    "user_id": "user_16",
-    "accounts": [
-      {
-        "account_id": "SAV-002-1212",
-        "account_type": "savings",
-        "balance": 6000.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-998877",
-        "account_id": "SAV-002-1212",
-        "date": "2025-09-10",
-        "amount": 500.00,
-        "description": "Transfer from Checking"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-999-0000",
-      "email": "user16@example.com"
-    }
-  },
-  {
-    "user_id": "user_17",
-    "accounts": [
-      {
-        "account_id": "CHK-001-5678",
-        "account_type": "checking",
-        "balance": 1800.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-001122",
-        "account_id": "CHK-001-5678",
-        "date": "2025-09-09",
-        "amount": -15.99,
-        "description": "Netflix"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-111-9999",
-      "email": "user17@example.com"
-    }
-  },
-  {
-    "user_id": "user_18",
-    "accounts": [
-      {
-        "account_id": "CC-003-8877",
-        "account_type": "credit_card",
-        "balance": -500.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-223344",
-        "account_id": "CC-003-8877",
-        "date": "2025-09-08",
-        "amount": -500.00,
-        "description": "Fraudulent Charge"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-222-8888",
-      "email": "user18@example.com"
-    }
-  },
-  {
-    "user_id": "user_19",
-    "accounts": [
-      {
-        "account_id": "CHK-001-6655",
-        "account_type": "checking",
-        "balance": 750.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-556677",
-        "account_id": "CHK-001-6655",
-        "date": "2025-09-07",
-        "amount": -50.00,
-        "description": "Uber"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-333-7777",
-      "email": "user19@example.com"
-    }
-  },
-  {
-    "user_id": "user_20",
-    "accounts": [
-      {
-        "account_id": "SAV-002-3311",
-        "account_type": "savings",
-        "balance": 11000.00,
-        "is_primary": true
-      }
-    ],
-    "transactions": [
-      {
-        "transaction_id": "TRN-889900",
-        "account_id": "SAV-002-3311",
-        "date": "2025-09-06",
-        "amount": 1000.00,
-        "description": "Transfer from Checking"
-      }
-    ],
-    "loans": [],
-    "contact_info": {
-      "phone_number": "555-444-6666",
-      "email": "user20@example.com"
-    }
-  }
-]
+  ]
+}
