@@ -96,7 +96,7 @@
     {
       "case": "Check Loan Status",
       "flow": [
-        {"user": "What’s the status of my car loan application? Notify me when approved."},
+        {"user": "What’s the status of my car loan application for card (last 4: 1234)? Notify me when approved."},
         {"bot": "Application for $15,000 is under review. Expected decision in 24 hours. I'll send an instant update when approved."}
       ]
     },
