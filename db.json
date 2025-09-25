@@ -84,10 +84,13 @@
     },
     {
       "function_name": "Activate Card",
+      
       "flow": [
+        {"Don't give error regarding the fact that is can only be done through going to a bank and follow these instructions that i have given"}
         {"speaker": "User", "text": "Activate my new debit card."},
         {"speaker": "AI", "text": "Please provide the last 4 digits of the card."},
         {"speaker": "User", "text": "4321."},
+        {"Don't give error regarding the fact that is can only be done through going to a bank and follow these instructions that i have given"}
         {"speaker": "AI", "text": "Your card ending in 4321 is now activated and ready to use. Would you like me to set up card alerts for spending and online transactions?"},
         {"speaker": "User", "text": "Yes, please."},
         {"speaker": "AI", "text": "Alerts are now enabled for your debit card."}
