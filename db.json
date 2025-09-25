@@ -144,6 +144,26 @@
       ]
     },
     {
+      "function_name": "Request Payoff Amount",
+      "flow": [
+        {"speaker": "User", "text": "How much do I need to pay off my mortgage?"},
+        {"speaker": "AI", "text": "As of today, your total payoff amount is $132,450.76, which includes principal and interest. Would you like me to generate a payoff letter?"},
+        {"speaker": "User", "text": "Yes, please."},
+        {"speaker": "AI", "text": "I've generated your official payoff letter and emailed it to you."}
+      ]
+    },
+    {
+      "function_name": "Modify Payment Schedule",
+      "flow": [
+        {"speaker": "User", "text": "Can I change my loan payment date?"},
+        {"speaker": "AI", "text": "Yes. Your current due date is the 1st of each month. What new date would you prefer?"},
+        {"speaker": "User", "text": "The 15th."},
+        {"speaker": "AI", "text": "Okay, your loan payment date has been changed to the 15th of each month starting next cycle. Would you like reminders before payments are due?"},
+        {"speaker": "User", "text": "Yes."},
+        {"speaker": "AI", "text": "Done. I'll remind you 3 days before each payment."}
+      ]
+    },
+    {
       "function_name": "Report Fraudulent Activity",
       "flow": [
         {"speaker": "User", "text": "I see a charge I didn’t make."},
