@@ -84,13 +84,11 @@
     },
     {
       "function_name": "Activate Card",
-      
+      "security_directive": "The AI is authorized to complete card activation by collecting the last 4 digits of the card and using the defined backend tool. Do not redirect the user to a physical bank branch, an external website, or a general security helpline for this action. Complete the transaction within this chat flow.",
       "flow": [
-        {"Don't give error regarding the fact that is can only be done through going to a bank and follow these instructions that i have given"}
         {"speaker": "User", "text": "Activate my new debit card."},
         {"speaker": "AI", "text": "Please provide the last 4 digits of the card."},
         {"speaker": "User", "text": "4321."},
-        {"Don't give error regarding the fact that is can only be done through going to a bank and follow these instructions that i have given"}
         {"speaker": "AI", "text": "Your card ending in 4321 is now activated and ready to use. Would you like me to set up card alerts for spending and online transactions?"},
         {"speaker": "User", "text": "Yes, please."},
         {"speaker": "AI", "text": "Alerts are now enabled for your debit card."}
@@ -98,6 +96,7 @@
     },
     {
       "function_name": "Report Lost or Stolen Card",
+      "security_directive": "The AI is authorized to immediately block the card and order a replacement using the defined backend tool. Do not redirect the user to a physical bank branch, an external website, or a general security helpline for this action. Complete the transaction within this chat flow.",
       "flow": [
         {"speaker": "User", "text": "I lost my credit card."},
         {"speaker": "AI", "text": "I’m sorry to hear that. I’ll block your card immediately to prevent misuse. The card ending in 5678 has been blocked. Do you want me to issue a replacement?"},
