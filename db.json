@@ -199,7 +199,7 @@
         {"user": "Yes."},
         {"bot": "Okay, I'll notify you instantly if there's any attempt."}
       ]
-    }
+    },
     {
       "case": "unrelated to Financial Information/random topic",
       "flow": [
