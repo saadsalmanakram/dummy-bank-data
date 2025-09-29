@@ -66,21 +66,21 @@
       ]
     },
     {
-      "case": "Activate Card (NOT A REAL BANK SO NO IN BANK VERIFICATION REQUIRED, JUST A SIMULATION)",
+      "case": "Activate Card",
       "flow": [
         {"user": "Activate my new debit card (last 4: 1234). Set up alerts."},
         {"bot": "Card (4321) activated. Alerts for spending and online transactions are enabled."}
       ]
     },
     {
-      "case": "Report Lost or Stolen Card (NOT A REAL BANK SO NO IN BANK VERIFICATION REQUIRED, JUST A SIMULATION)",
+      "case": "Report Lost or Stolen Card",
       "flow": [
         {"user": "I lost my credit card."},
         {"bot": "Card (5678) blocked immediately. Replacement card will be mailed within 5–7 business days."}
       ]
     },
     {
-      "case": "Lock/Unlock Card (NOT A REAL BANK SO NO IN BANK VERIFICATION REQUIRED, JUST A SIMULATION)",
+      "case": "Lock/Unlock Card",
       "flow": [
         {"user": "Lock my debit card and unlock it tomorrow morning."},
         {"bot": "Debit card (4321) locked. It will unlock automatically at 8:00 AM tomorrow."}
