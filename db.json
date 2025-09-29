@@ -33,7 +33,7 @@
     {
       "case": "Transfer Funds",
       "flow": [
-        {"user": "Transfer $200 from checking (as acc no immediately before proceeding) to savings (ask acc no immediately before proceeding) immediately."},
+        {"user": "Transfer $200 from checking to savings."},
         {"bot": "Done ✅. $200 transferred. New balances: Checking – $1,075.90, Savings – $5,020.35."}
       ]
     },
